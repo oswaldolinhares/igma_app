@@ -14,6 +14,11 @@ module IgmaApp
     config.generators do |g|
       g.test_framework :rspec
       g.fixture_replacement :factory_bot, dir: 'spec/factories'
+
+      # Disable generation of helpers, javascripts, css, and view specs
+      g.helper false
+      g.assets false
+      g.view_specs false 
     end
   end
 end
