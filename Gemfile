@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '3.3.0'
 
 gem 'bootsnap', require: false
+gem 'cpf_cnpj'
 gem 'puma', '>= 5.0'
 gem 'rails', '~> 7.1.3'
 gem 'sqlite3', '~> 1.4'
