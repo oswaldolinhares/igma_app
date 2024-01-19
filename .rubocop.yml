@@ -1,0 +1,65 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 3.0.2
+  UseCache: true
+  NewCops: enable
+
+  Include:
+    - '**/*.rb'
+
+  Exclude:
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'app/views/**/*'
+    - 'node_modules/**/*'
+    - 'front/**/*'
+    - 'vendor/**/*'
+    - 'Guardfile'
+
+Rails:
+  Enabled: true
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/BlockLength:
+  Enabled: true
+  Exclude:
+    - "**/*_spec.rb"
+    - "**/*.rake"
+    - "**/*.jbuilder"
+    - "app/admin/**/*.rb"
+    - "spec/support/shared_examples/**/*.rb"
+    - "spec/factories/**.rb"
+    - "spec/**/*_helper.rb"
+    - "app/validators/**/*.rb"
+  AllowedMethods:
+    - describe
+    - context
+    - it
+    - feature
+    - scenario
+    - let
+    - shared_examples
+
+Layout:
+  LineLength: 120
+  IndentationStyle:
+    IndentationWidth: 2
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
