@@ -76,12 +76,15 @@ GEM
       mutex_m
       tzinfo (~> 2.0)
     ast (2.4.2)
+    awesome_print (1.9.2)
     base64 (0.2.0)
     bigdecimal (3.1.6)
     bindex (0.8.1)
     bootsnap (1.17.1)
       msgpack (~> 1.2)
     builder (3.2.4)
+    byebug (11.1.3)
+    coderay (1.1.3)
     concurrent-ruby (1.2.3)
     connection_pool (2.4.1)
     crass (1.0.6)
@@ -104,6 +107,7 @@ GEM
       activesupport (>= 6.1)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
+    interception (0.5)
     io-console (0.7.2)
     irb (1.11.1)
       rdoc
@@ -119,6 +123,7 @@ GEM
       net-pop
       net-smtp
     marcel (1.0.2)
+    method_source (1.0.0)
     mini_mime (1.1.5)
     minitest (5.21.2)
     msgpack (1.7.2)
@@ -149,6 +154,22 @@ GEM
     parser (3.3.0.4)
       ast (~> 2.4.1)
       racc
+    pry (0.14.2)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
+    pry-byebug (3.10.1)
+      byebug (~> 11.0)
+      pry (>= 0.13, < 0.15)
+    pry-doc (1.5.0)
+      pry (~> 0.11)
+      yard (~> 0.9.11)
+    pry-rails (0.3.9)
+      pry (>= 0.10.4)
+    pry-rescue (1.6.0)
+      interception (>= 0.5)
+      pry (>= 0.12.0)
+    pry-theme (1.3.1)
+      coderay (~> 1.1)
     psych (5.1.2)
       stringio
     puma (6.4.2)
@@ -270,6 +291,7 @@ GEM
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    yard (0.9.34)
     zeitwerk (2.6.12)
 
 PLATFORMS
@@ -281,10 +303,17 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  awesome_print
   bootsnap
   debug
   factory_bot_rails
   faker
+  pry
+  pry-byebug
+  pry-doc
+  pry-rails
+  pry-rescue
+  pry-theme
   puma (>= 5.0)
   rails (~> 7.1.3)
   rspec-rails (~> 6.1.0)
