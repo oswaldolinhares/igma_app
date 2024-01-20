@@ -55,6 +55,21 @@ RSpec.describe 'Customers' do
         expect(customer.cpf).to eq(valid_attributes[:cpf].gsub!(/\D/, ''))
       end
     end
+
+    context 'when try creating a duplicate customer' do
+      let!(:customer) { create(:customer) }
+      let(:customer_attributes) { customer.attributes }
+
+      before { post(api_customers_path, params: { customer: customer_attributes }) }
+
+      it 'returns status 422' do
+        expect(response).to have_http_status(:unprocessable_entity)
+      end
+
+      it 'saves the customer with a clean CPF' do
+        expect(json_errors).to include('Cpf has already been taken')
+      end
+    end
   end
 
   describe 'GET /customers' do

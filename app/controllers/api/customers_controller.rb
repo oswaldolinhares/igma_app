@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Api
-  class CustomersController < ApplicationController
+  class CustomersController < BaseController
     def index
       if cpf_number
         search_customer_by_cpf
